@@ -1,0 +1,1127 @@
+/* --- HACIENDA DESIGN FOUNDATION --- */
+:root {
+    --primary-bg: #FDFBF5; /* A warm, sun-drenched off-white */
+    --secondary-bg: #6D4C41; /* Rich, dark wood / terracotta */
+    --accent-color: #1565C0; /* Vibrant Talavera blue */
+    --text-color: #3E2723; /* Dark, earthy brown for text */
+    --light-text: #FDFBF5;
+    --contrast-bg: #EFEBE9; /* A warm, stone-like light gray */
+    
+    --heading-font: 'Cinzel Decorative', serif;
+    --body-font: 'Merriweather', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* --- HACIENDA-INSPIRED TYPOGRAPHY --- */
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    color: var(--secondary-bg);
+    padding-bottom: 1rem;
+}
+
+/* Decorative Tile-inspired Underline */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+/* --- REUSABLE COMPONENTS --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* --- "Book Now" Button --- */
+.main-header .cta-button {
+    background-color: var(--secondary-bg); /* Using the rich, dark wood color */
+    color: var(--light-text);
+    border: 2px solid var(--secondary-bg);
+    border-radius: 5px;
+    padding: 0.4rem 1.5rem;
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px; /* Adds a touch of elegance */
+    text-transform: uppercase; /* Makes it feel like a primary action */
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.main-header .cta-button:hover {
+    background-color: #5a3c32; /* A slightly lighter, warmer shade of the dark wood */
+    border-color: #5a3c32;
+    transform: translateY(-2px); /* Lifts the button on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    color: #fff;
+}
+
+.primary-button, .secondary-button {
+    border: 2px solid var(--accent-color);
+    font-family: var(--body-font);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    
+    /* Code for uniform height */
+    display: inline-flex;     /* Use flexbox for alignment */
+    align-items: center;       /* Vertically center the text */
+    justify-content: center;   /* Horizontally center the text */
+    height: 47px;              /* Set the explicit, maximum height */
+    padding: 0 2rem;           /* Adjust padding for horizontal spacing only */
+    box-sizing: border-box;    /* Ensures padding & border are included in the height */
+}
+
+.primary-button {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button:hover {
+    background-color: #1976D2; /* Slightly lighter blue */
+    border-color: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+/* --- HEADER AND NAVIGATION --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+    background-color: transparent;
+}
+
+.main-header.scrolled {
+    background-color: var(--primary-bg);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 2rem;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Creates space between the logo and the text */
+    text-decoration: none;
+    color: var(--secondary-bg);
+}
+
+.logo-img {
+    height: 60px; /* Sets the logo height as requested */
+    width: auto;  /* Maintains the aspect ratio */
+    display: block;
+}
+
+.logo-text {
+    font-family: var(--heading-font);
+    font-size: .7rem;
+    font-weight: 700;
+    width: 100px;
+    /* The color is inherited from the parent .logo link */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--secondary-bg);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover, .main-header.scrolled .logo:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Burger */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-bg);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- Dropdown Navigation --- */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼'; /* Simple text-based down arrow */
+    font-size: 0.6em;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 150%; /* Position it below the nav link */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-bg);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 100px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, top 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 120%; /* Animate it into view */
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(253, 251, 245, 0.3), rgba(253, 251, 245, 0.7)), url('../../images/img/fachada-1.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 100px; /* Offset for header */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+}
+
+/* --- ABOUT US SECTION --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image-container {
+    border-radius: 150px 150px 5px 5px; /* Arch shape */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-text h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg);
+}
+
+/* --- ROOMS SECTION --- */
+#rooms {
+    background-color: var(--contrast-bg);
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.room-card {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.room-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.room-card-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.room-card-content p {
+    margin-bottom: 1.5rem; /* Creates space between the text and the new button */
+}
+
+.room-card h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-bg);
+    margin-bottom: 0.5rem;
+}
+
+/* --- GALLERY SECTION --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* --- SERVICES & POLICIES SECTION --- */
+#services {
+    background-color: var(--contrast-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.service-item:hover {
+    background-color: #fff;
+    border-color: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-item svg {
+    width: 48px;
+    height: 48px;
+    color: var(--accent-color);
+}
+
+.service-item span {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.policies-button-container {
+    text-align: center;
+}
+
+/* --- CONTACT SECTION --- */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-info h3, .contact-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    font-family: var(--body-font);
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+/* --- Reminder Message Styles --- */
+.reminder-message {
+    margin-top: 2.5rem; /* More space to separate it */
+    font-size: 0.8rem; /* Small font size as requested */
+    color: #616161; /* A slightly softer text color */
+    line-height: 1.6;
+    font-style: italic; /* Helps denote it as an informational note */
+    background-color: var(--contrast-bg); /* Subtle background to stand out */
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 4px solid var(--accent-color); /* A nice accent */
+}
+
+.reminder-message a {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.reminder-message a:hover {
+    text-decoration: none;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: var(--secondary-bg);
+    color: var(--light-text);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 39, 35, 0.7); /* Dark Brown overlay */
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--primary-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.4s ease;
+    text-align: center;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg);
+}
+
+.modal-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Booking Modal specifics */
+.booking-options {
+    list-style: none;
+}
+.booking-options li {
+    margin-bottom: 1rem;
+}
+.booking-options a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+.booking-options a:hover {
+    border-color: var(--accent-color);
+    background-color: #fff;
+}
+.phone-link svg {
+    margin-right: 10px;
+    fill: var(--text-color);
+}
+.booking-logo {
+    height: 30px;
+    max-width: 150px;
+}
+img[alt="Book on Trivago"] {
+    filter: none; /* remove the invert filter */
+}
+img[alt="Book on Kayak"] {
+    /* Kayak provides a white logo, it needs a wrapper or a dark background */
+    filter: brightness(0.2);
+}
+.booking-options a:hover img[alt="Book on Kayak"] {
+    filter: none;
+}
+
+/* Policies Modal specifics */
+#policiesModal .modal-content {
+    text-align: left;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+#policiesModal h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    color: var(--secondary-bg);
+}
+#policiesModal p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+#policiesModal p strong {
+    color: var(--secondary-bg);
+}
+
+/* --- Social Media Links in Contact Section --- */
+.contact-info h3 {
+    margin-bottom: 1.5rem; /* Add a bit more space */
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.social-links svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--text-color);
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover svg {
+    fill: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* --- Map Section --- */
+#map-location {
+    padding: 5rem 0; /* No horizontal padding on section itself */
+}
+
+.address-block {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.address-block p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--secondary-bg);
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%; /* Aspect ratio 2:1 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Rooms Page Specific Styles --- */
+.page-header {
+    background-color: var(--contrast-bg);
+    text-align: center;
+    padding: 8.5rem 2rem;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+}
+
+.room-detail-section {
+    padding: 5rem 2rem;
+}
+
+.room-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* For alternating layout */
+.layout-reversed .slider-container {
+    order: 2;
+}
+.layout-reversed .room-description {
+    order: 1;
+}
+
+.room-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg);
+}
+
+.room-description p {
+    margin-bottom: 1rem;
+}
+
+.room-description strong {
+    color: var(--secondary-bg);
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+}
+
+.conditions {
+    font-size: 0.8rem;
+    color: #616161;
+    font-style: italic;
+}
+
+/* --- Image Slider Styles --- */
+.slider-container {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(253, 251, 245, 0.7);
+    border: none;
+    color: var(--secondary-bg);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: var(--primary-bg);
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* --- Masonry Gallery Styles --- */
+.masonry-grid {
+    column-count: 3; /* Number of columns */
+    column-gap: 1.5rem;
+}
+
+.masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Gallery Modal Styles --- */
+#galleryModal .modal-gallery-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-gallery-image {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: block;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.modal-gallery-image.zoomed {
+    transform: scale(1.5); /* Adjust zoom level as needed */
+    cursor: zoom-out;
+}
+
+.modal-gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: var(--light-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.modal-gallery-close:hover {
+    opacity: 1;
+}
+
+.zoom-instruction {
+    position: absolute;
+    bottom: 20px;
+    color: var(--light-text);
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- View Gallery Button Container --- */
+.view-gallery-button-container {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* --- Enhanced Footer Styles --- */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo img {
+    width: 70px;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover img {
+    opacity: 1;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social-links svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--light-text);
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-links a:hover svg {
+    fill: #FFFFFF; /* Brighter white on hover */
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- Footer Separator --- */
+.footer-separator {
+    border: 0;
+    height: 1px;
+    background-color: rgba(253, 251, 245, 0.2); /* Semi-transparent white */
+    width: 80%;
+    max-width: 250px;
+}
+
+/* --- Tourism / Blog Page Styles --- */
+#blog-section {
+    max-width: 800px; /* Optimal width for reading */
+}
+
+.blog-post {
+    margin-bottom: 4rem;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.blog-post-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg);
+}
+
+.blog-post-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- Tourism Preview Section on Homepage --- */
+#tourism-preview {
+    background-color: var(--contrast-bg);
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+}
+
+.tourism-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tourism-card {
+    background-color: var(--primary-bg);
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tourism-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.tourism-card img {
+    width: 100%;
+    height: 300px; /* Aesthetically pleasing height */
+    object-fit: cover;
+}
+
+.tourism-card-content {
+    padding: 1.5rem;
+}
+
+.tourism-card-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg);
+}
+
+.tourism-card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+a.see-more {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.see-more:hover {
+    text-decoration: underline;
+}
+
+/* --- Explore More Button Container --- */
+.explore-button-container {
+    text-align: center;
+    margin-top: 2.5rem; /* Adds space above the button */
+}
+
+/* Adjust Masonry for different screen sizes */
+@media screen and (max-width: 992px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+
+    .logo-text {
+        display: none; /* Hides the "Hotel Otoch" text */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media screen and (max-width: 768px) {
+    .section-title { font-size: 2.2rem; }
+    .hero-content h1 { font-size: 3rem; }
+
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 100vh;
+        top: 0;
+        background-color: var(--primary-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 10;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+    .burger {
+        display: block;
+        z-index: 11;
+    }
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Adjust dropdown for mobile view */
+    .dropdown-toggle::after {
+        transform: rotate(-90deg); /* Arrow points left */
+        transition: transform 0.3s ease;
+    }
+
+    .nav-item-dropdown.open .dropdown-toggle::after {
+        transform: rotate(0deg); /* Arrow points down when open */
+    }
+    
+    .dropdown-menu {
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+        min-width: auto;
+        padding: 0.5rem 0 0 1rem; /* Indent the options */
+        display: none; /* Hide by default on mobile */
+    }
+
+    .nav-item-dropdown.open .dropdown-menu {
+        display: block; /* Show when .open class is added by JS */
+    }
+
+    .about-content, .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Rooms Page --- */
+    .room-detail-container {
+        grid-template-columns: 1fr;
+    }
+    .layout-reversed .slider-container,
+    .layout-reversed .room-description {
+        order: initial; /* Reset order for mobile */
+    }
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
