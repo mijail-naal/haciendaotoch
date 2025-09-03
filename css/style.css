@@ -64,13 +64,13 @@ h1, h2, h3 {
     background-color: var(--secondary-bg); /* Using the rich, dark wood color */
     color: var(--light-text);
     border: 2px solid var(--secondary-bg);
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 0.4rem 1.5rem;
     font-family: var(--body-font);
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.5px; /* Adds a touch of elegance */
-    text-transform: uppercase; /* Makes it feel like a primary action */
+    /*text-transform: uppercase;*/ /* Makes it feel like a primary action */
     text-decoration: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     cursor: pointer;
@@ -91,7 +91,7 @@ h1, h2, h3 {
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: all 0.3s ease;
     
     /* Code for uniform height */
@@ -707,7 +707,7 @@ img[alt="Book on Kayak"] {
 }
 
 .room-description p {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 .room-description strong {
@@ -715,10 +715,15 @@ img[alt="Book on Kayak"] {
 }
 
 .price {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--accent-color);
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+.feature {
+    font-size: 0.8rem;
+    text-indent: 4em;
 }
 
 .conditions {
