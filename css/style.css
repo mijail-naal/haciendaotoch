@@ -1056,7 +1056,13 @@ a.see-more:hover {
 @media screen and (max-width: 768px) {
     /*.section-title { font-size: 2.2rem; }*/
     .section-title { font-size: 1.6rem; }
-    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content h1, .page-header h1 { 
+        font-size: 2.5rem; 
+    }
+
+    .page-header .container { 
+        padding: 5rem 0;
+    }
 
     .about-text h3, .contact-info h3, .contact-form h3 { 
         font-size: 1.2rem; 
