@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/logo-2.png">
+    <title>Galería</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="es/index.html" class="logo">
+                <img src="../img/logo-3.png" alt="Hotel Otoch Logo" class="logo-img">
+                <span class="logo-text">Hotel Hacienda Otoch</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="rooms">Habitaciones</a></li>
+                <li><a href="gallery">Galería</a></li>
+                <li><a href="tourism">Turismo</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+                <!-- Language Dropdown -->
+                <li class="nav-item-dropdown">
+                    <a href="#" class="dropdown-toggle">Es</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../index.html">English</a></li>
+                        <li><a href="index.html">Español</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#booking" class="cta-button">Reservar</a>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header Section -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Galería</h1>
+                <p>Un vistazo a la tranquilidad y el encanto de nuestro Hotel Hacienda.</p>
+            </div>
+        </section>
+
+        <!-- Masonry Gallery Section -->
+        <section id="gallery-page" class="container">
+            <div class="masonry-grid">
+                <div class="masonry-item"><img src="../img/gallery/gallery-11.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-12.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-13.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-14.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-15.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-16.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-18.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../img/gallery/gallery-22.jpg" alt=""></div>
+                <!-- 
+                <div class="masonry-item"><img src="img/gallery/gallery-24.jpg" alt=""></div>
+                <div class="masonry-item"><img src="img/gallery/gallery-17.jpg" alt=""></div>
+                <div class="masonry-item"><img src="img/gallery/gallery-19.jpg" alt=""></div>
+                <div class="masonry-item"><img src="img/gallery/gallery-20.jpg" alt=""></div>
+                <div class="masonry-item"><img src="img/gallery/gallery-21.jpg" alt=""></div>
+                <div class="masonry-item"><img src="img/gallery/gallery-23.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../images/img/gallery/gallery-25.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../images/img/gallery/gallery-26.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../images/img/gallery/gallery-27.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../images/img/gallery/gallery-28.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../images/img/gallery/gallery-29.jpg" alt=""></div>
+                <div class="masonry-item"><img src="../images/img/gallery/gallery-30.jpg" alt=""></div>
+                 -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">
+                <img src="../img/logo-1.png" alt="Hotel Otoch Logo">
+            </a>
+            <div class="footer-social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+            <hr class="footer-separator">
+            <p class="footer-copyright">&copy; 2025 Hotel Otoch. Derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h2>Reserva tu estancia</h2>
+            <p>Puedes reservar llamando directamente o utilizando uno de los siguientes motores de reservas.</p>
+            <ul class="booking-options">
+                <li>
+                    <a href="https://wa.me/529851090354?text=Hotel%20Hacienda%20Otoch" target="_blank" rel="noopener noreferrer" class="phone-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.166l-1.138 4.162 4.273-1.12z"/></svg>
+                        <span>Llámanos o envíanos WhatsApp: +52 55 1234 5678</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.booking.com/hotel/mx/hacienda-otoch.es-mx.html" target="_blank" rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" alt="Reserva en Booking.com" class="booking-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://hoteles.com/ho3238637984/hotel-hacienda-otoch-valladolid-mexico/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Hotels.com_Logo_2023.svg" alt="Reserva en Hoteles.com" class="booking-logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conditions and Policies Modal -->
+    <div class="modal-overlay" id="policiesModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closePoliciesBtn">&times;</button>
+            <h2>Condiciones y políticas</h2>
+            <div class="policy-section">
+                <h3>Comodidades y Servicios</h3>
+            </div>
+            <div class="policy-section">
+                <h3>Políticas e información del hotel</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="modal-overlay" id="galleryModal">
+        <button class="modal-gallery-close">&times;</button>
+        <div class="modal-gallery-content">
+            <img src="" alt="Enlarged gallery view" class="modal-gallery-image">
+        </div>
+        <p class="zoom-instruction">Haga clic en la imagen para ampliar</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>
